@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DBpedia Annotation</title>
+</head>
+<body>
+	<h2>Enter your text to be annotated:</h2>
+	
+	<form action="/DBpedia_annotate" method="post">
+	    <textarea name="text" th:text="${original}" rows="6" cols="60"></textarea><br/>
+	    <button type="submit">Annotate</button>
+	</form>
+	
+	<br/>
+
+	<div th:if="${error}" style="color:red;">
+	    <p th:text="${error}"></p>
+	</div>
+	
+	<!-- Display annotated text -->
+	<div th:if="${annotatedHtml}">
+	    <h3>Annotated Result:</h3>
+	    <p th:utext="${annotatedHtml}"></p>
+	</div>
+
+</body>
+</html>
