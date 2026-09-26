@@ -71,7 +71,15 @@ This repository is an academic/coursework project. The folders are currently sou
 
 ## Important security note
 
-Before pushing this project to a public GitHub repository, remove the hard-coded OpenWeatherMap API key from `Jersey_ii/Weather_Client.java`. If the key has already been used publicly, revoke it and generate a replacement. Store secrets in environment variables or a local configuration file that is excluded through `.gitignore`.
+The OpenWeatherMap key is not hard-coded in `Jersey_ii/Weather_Client.java`; it is loaded from local configuration. If the previous key has already been used publicly, revoke it and generate a replacement. Store secrets in environment variables or a local configuration file that is excluded through `.gitignore`.
+
+The local `.env` file contains the OpenWeatherMap key and is excluded from Git. To configure another machine, copy `.env.example` to `.env` and add a valid key:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+The weather client first checks the `OPENWEATHER_API_KEY` environment variable and then looks for `.env` in the project folder or its parent folder. Do not commit `.env` or share its contents.
 
 ## Creating a new Git repository
 

@@ -1,0 +1,19 @@
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+
+# Java build output
+*.class
+target/
+build/
+out/
+
+# IDE and editor files
+.idea/
+*.iml
+.vscode/
+
+# Python local environment
+.venv/
+
